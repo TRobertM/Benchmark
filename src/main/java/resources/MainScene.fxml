@@ -2,8 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -23,10 +21,5 @@
          <font>
             <Font name="Century" size="12.0" />
          </font></Button>
-      <ImageView fx:id="loadingImage" fitHeight="150.0" fitWidth="200.0" layoutX="290.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../dccc846959dffafa30a836dfacf9bab9.gif" />
-         </image>
-      </ImageView>
     </children>
 </AnchorPane>

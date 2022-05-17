@@ -2,6 +2,7 @@ package controllers;
 
 import benchmark.Benchmark;
 import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,10 +22,8 @@ public class MainSceneController implements Initializable {
     @FXML
     private Button exitButton;
 
-    private String[] functions = {"Geometric", "Gauss"};
-    private Integer[] digits = {10000, 25000, 50000, 100000};
-    private String function;
-    private int numberOfDigits;
+    private final String[] functions = {"Geometric", "Gauss"};
+    private final Integer[] digits = {10000, 25000, 50000, 100000};
     private Benchmark benchmark;
 
     @Override
@@ -38,19 +37,25 @@ public class MainSceneController implements Initializable {
     }
 
     public void exit(){
-        exitButton.setOnAction((ActionEvent event) -> {
-            Platform.exit();
-        });
+        exitButton.setOnAction((ActionEvent event) -> Platform.exit());
     }
 
     public void start(){
         benchmark = new Benchmark();
-        function = functionSelector.getValue();
-        numberOfDigits = numberSelector.getValue();
+        calculatePI task = new calculatePI();
+        String function = functionSelector.getValue();
+        int numberOfDigits = numberSelector.getValue();
         benchmark.initialize(numberOfDigits, function);
         benchmark.warmUp();
-        new Thread(benchmark).start();
-        System.out.println(Thread.currentThread().getName());
+        new Thread(task).start();
     }
 
+    class calculatePI extends Task<Void> {
+        @Override
+        protected Void call(){
+            benchmark.run();
+            result.setText(String.valueOf(benchmark.getResult()));
+            return null;
+        }
+    }
 }

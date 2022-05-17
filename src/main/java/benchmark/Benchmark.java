@@ -1,23 +1,17 @@
 package benchmark;
 
-import controllers.MainSceneController;
 import exceptions.MethodNotImplementedException;
 import formulas.Gauss;
 import formulas.Geometric;
 import formulas.PI;
-import formulas.Score;
-import javafx.application.Platform;
-import logger.FileLogger;
 import timer.Timer;
-
-import java.math.BigDecimal;
 
 public class Benchmark implements IBenchmark, Runnable{
     protected int numberOfDigits;
     protected String formula;
     protected Timer myTimer;
     protected PI piMethod;
-    public double finish;
+    protected double time;
 
     @Override
     public void initialize(Object ... params) {
@@ -33,8 +27,8 @@ public class Benchmark implements IBenchmark, Runnable{
     public void run(){
         myTimer.start();
         piMethod.calculatePi(numberOfDigits);
-        finish = myTimer.stop();
-        System.out.println(finish/1000000000.0);
+        time = myTimer.stop()/1000000000.0;
+        System.out.println(time);
     }
 
     @Override
@@ -50,5 +44,10 @@ public class Benchmark implements IBenchmark, Runnable{
     @Override
     public void warmUp() {
         piMethod.calculatePi(1000);
+    }
+
+    public double getResult(){
+        double Score = numberOfDigits/time;
+        return Score;
     }
 }

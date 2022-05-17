@@ -36,13 +36,13 @@ sourceSets {
 }
 
 application{
-    mainClassName = "BenchMain"
+    mainClassName = "Launcher"
 }
 
 jar{
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     manifest{
-        attributes 'Main-Class' : 'BenchMain'
+        attributes 'Main-Class' : 'Launcher'
     }
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
