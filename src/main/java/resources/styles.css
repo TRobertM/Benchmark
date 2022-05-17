@@ -1,5 +1,5 @@
 .root {
-    -fx-background-image: url("https://images.unsplash.com/photo-1572470562861-fdec5e26bec2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    -fx-background-image: url(background.png);
 }
 
 .label {
@@ -14,4 +14,46 @@
     -fx-font-size: 14px;
     -fx-text-fill: white;
     -fx-font-family: Roboto;
+}
+
+#goBack {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-size: 16px;
+    -fx-text-fill: black;
+    -fx-font-family: Coolvetica;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to right bottom, #61D8DE, #E839F6);
+    -fx-font-weight: 900;
+    -fx-text-fill: white;
+    -fx-background-radius: 35px;
+    -fx-font-family: Coolvetica;
+    -fx-min-height: 30px;
+    -fx-min-width: 125px;
+}
+
+.choice-box {
+    -fx-background-color: transparent;
+    -fx-border-color: black;
+    -fx-background-radius: 25px;
+    -fx-border-style: solid;
+    -fx-border-radius: 25px;
+}
+
+#scoreText {
+    -fx-font-family: Coolvetica;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-font-size: 20px;
+}
+
+#timeText {
+    -fx-font-family: Coolvetica;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-font-size: 20px;
 }

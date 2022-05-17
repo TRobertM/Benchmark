@@ -12,6 +12,7 @@ public class Benchmark implements IBenchmark, Runnable{
     protected Timer myTimer;
     protected PI piMethod;
     protected double time;
+    protected boolean stopped;
 
     @Override
     public void initialize(Object ... params) {
@@ -25,6 +26,7 @@ public class Benchmark implements IBenchmark, Runnable{
 
     @Override
     public void run(){
+        stopped = false;
         myTimer.start();
         piMethod.calculatePi(numberOfDigits);
         time = myTimer.stop()/1000000000.0;
@@ -38,16 +40,28 @@ public class Benchmark implements IBenchmark, Runnable{
 
     @Override
     public void stop() {
+        stopped = true;
         piMethod.stop();
     }
 
     @Override
     public void warmUp() {
-        piMethod.calculatePi(1000);
+        piMethod.calculatePi(5000);
+    }
+
+    public boolean check(){
+        if (stopped){
+            return true;
+        }
+        else return false;
     }
 
     public double getResult(){
-        double Score = numberOfDigits/time;
+        double Score = Math.round((numberOfDigits/time)/100.0);
         return Score;
+    }
+
+    public String getTime(){
+        return "Finished in: " + String.format("%.2f", time);
     }
 }

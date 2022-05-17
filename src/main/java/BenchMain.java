@@ -8,10 +8,6 @@ import javafx.stage.StageStyle;
 
 
 public class BenchMain extends Application{
-    public BenchMain(){
-
-    }
-
     public static void main(String[] args){
         launch(args);
     }
@@ -25,7 +21,7 @@ public class BenchMain extends Application{
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
-        stage.getIcons().add(new Image("resources/amogus.png"));
+        stage.getIcons().add(new Image("resources/icon.png"));
         stage.setTitle("PieBenchmark");
         stage.show();
     }
