@@ -22,7 +22,7 @@ public class BenchMain extends Application{
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image("resources/icon.png"));
-        stage.setTitle("PieBenchmark");
+        stage.setTitle("PIBenchmark");
         stage.show();
     }
 }

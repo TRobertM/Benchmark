@@ -7,7 +7,6 @@ import java.util.Objects;
 public class Geometric extends PI{
     private static final BigDecimal bigTwo = new BigDecimal(2);
     private static final BigDecimal bigFour = new BigDecimal(4);
-    private static boolean running = true;
 
     private static BigDecimal bigSqrt(BigDecimal bd, MathContext con) {
         BigDecimal x0 = BigDecimal.ZERO;
@@ -27,7 +26,10 @@ public class Geometric extends PI{
         BigDecimal t;
         BigDecimal sum = BigDecimal.ZERO;
         BigDecimal pow = bigTwo;
-        while ((!Objects.equals(a, g)) && running) {
+        while ((!Objects.equals(a, g))) {
+            if(running == false){
+                break;
+            }
             t = a.add(g).divide(bigTwo, precision);
             g = bigSqrt(a.multiply(g), precision);
             a = t;

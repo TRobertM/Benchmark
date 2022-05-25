@@ -20,7 +20,10 @@ public class Gauss extends PI{
         BigDecimal pZero = new BigDecimal(1.0);
         BigDecimal an1, bn1, tn1, pn1;
         BigDecimal pi = new BigDecimal(0.0);
-        for (long i = 0; i < 25 && running; ++i) {
+        for (long i = 0; i < 25; ++i) {
+            if(running == false){
+                break;
+            }
             an1 = aZero.add(bZero, mc).divide(two, scale, RoundingMode.CEILING);
             bn1 = aZero.multiply(bZero, mc).sqrt(mc);
             tn1 = tZero.subtract(pZero.multiply(aZero.subtract(an1, mc).pow(2, mc), mc), mc);

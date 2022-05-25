@@ -30,7 +30,7 @@ public class Benchmark implements IBenchmark, Runnable{
         myTimer.start();
         piMethod.calculatePi(numberOfDigits);
         time = myTimer.stop()/1000000000.0;
-        System.out.println(time);
+        System.out.println("TIME: " + time);
     }
 
     @Override

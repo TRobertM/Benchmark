@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -23,7 +24,7 @@
       </Pane>
       <Pane fx:id="myPane" layoutX="278.0" layoutY="148.0" prefHeight="227.0" prefWidth="200.0">
          <children>
-            <Text layoutX="-282.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="*Gauss formula may take a long time for longer number of digits" wrappingWidth="767.31640625" />
+            <Text fx:id="errorText" layoutX="-282.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="*Gauss formula may take a long time for longer number of digits" wrappingWidth="767.31640625" />
               <ChoiceBox fx:id="functionSelector" layoutX="27.0" layoutY="73.0" prefWidth="150.0" />
               <ChoiceBox fx:id="numberSelector" layoutX="27.0" layoutY="115.0" prefWidth="150.0" />
               <Button fx:id="startButton" layoutX="39.0" layoutY="153.0" mnemonicParsing="false" onAction="#start" prefHeight="30.0" prefWidth="125.0" text="START" textFill="WHITE">
@@ -47,9 +48,7 @@
             <Text id="timeText" fx:id="finishTime" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="750.0" />
             <Button id="goBack" layoutX="-37.0" layoutY="-6.0" mnemonicParsing="false" onAction="#goBack" prefHeight="52.0" prefWidth="125.0" text="&lt;" />
          </children></Pane>
-      <Button id="exitButton" fx:id="exitButton" layoutX="672.0" layoutY="1.0" mnemonicParsing="false" onAction="#exit" prefHeight="18.0" prefWidth="16.0" stylesheets="@styles.css" text="X">
-         <font>
-            <Font name="Century" size="12.0" />
-         </font></Button>
+      <Button id="exitButton" fx:id="exitButton" layoutX="671.0" layoutY="3.0" minWidth="71.0" mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="71.0" text="X" />
+      <Label id="minimizeButton" fx:id="minimizeButton" layoutX="705.0" layoutY="8.0" onMouseClicked="#minimize" prefHeight="17.0" prefWidth="10.0" text="_" />
     </children>
 </AnchorPane>
