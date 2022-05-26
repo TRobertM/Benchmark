@@ -14,20 +14,20 @@
     <children>
       <Pane fx:id="myPane2" layoutX="278.0" layoutY="148.0" prefHeight="227.0" prefWidth="200.0" visible="false">
          <children>
-            <ImageView fitHeight="241.0" fitWidth="425.0" layoutX="-59.0" layoutY="-18.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="241.0" fitWidth="425.0" layoutX="-59.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@kt-loader-2.gif" />
                </image>
             </ImageView>
-            <Button fx:id="stopButton" layoutX="39.0" layoutY="153.0" mnemonicParsing="false" onAction="#stop" text="STOP" />
+            <Button fx:id="stopButton" layoutX="39.0" layoutY="167.0" mnemonicParsing="false" onAction="#stop" text="STOP" />
          </children>
       </Pane>
       <Pane fx:id="myPane" layoutX="278.0" layoutY="148.0" prefHeight="227.0" prefWidth="200.0">
          <children>
-            <Text fx:id="errorText" layoutX="-282.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="*Gauss formula may take a long time for longer number of digits" wrappingWidth="767.31640625" />
+            <Text fx:id="errorText" layoutX="-282.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="*Gauss formula may take a long time for longer number of digits" wrappingWidth="767.31640625" />
               <ChoiceBox fx:id="functionSelector" layoutX="27.0" layoutY="73.0" prefWidth="150.0" />
               <ChoiceBox fx:id="numberSelector" layoutX="27.0" layoutY="115.0" prefWidth="150.0" />
-              <Button fx:id="startButton" layoutX="39.0" layoutY="153.0" mnemonicParsing="false" onAction="#start" prefHeight="30.0" prefWidth="125.0" text="START" textFill="WHITE">
+              <Button fx:id="startButton" layoutX="39.0" layoutY="167.0" mnemonicParsing="false" onAction="#start" prefHeight="30.0" prefWidth="125.0" text="START" textFill="WHITE">
                <font>
                   <Font name="CoolveticaRg-Regular" size="11.0" />
                </font></Button>

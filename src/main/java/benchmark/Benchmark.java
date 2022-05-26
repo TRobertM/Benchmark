@@ -46,7 +46,7 @@ public class Benchmark implements IBenchmark, Runnable{
 
     @Override
     public void warmUp() {
-        piMethod.calculatePi(5000);
+        piMethod.calculatePi(50000);
     }
 
     public boolean check(){

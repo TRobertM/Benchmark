@@ -66,6 +66,7 @@ public class MainSceneController implements Initializable {
         protected Void call(){
             myPane2.setVisible(true);
             myPane.setVisible(false);
+            benchmark.warmUp();
             benchmark.run();
             if(benchmark.check() == true){
                 myPane2.setVisible(false);
@@ -93,11 +94,10 @@ public class MainSceneController implements Initializable {
         String function = functionSelector.getValue();
         int numberOfDigits = numberSelector.getValue();
         benchmark.initialize(numberOfDigits, function);
-        benchmark.warmUp();
-        int cores =  Runtime.getRuntime().availableProcessors();
-        for(int i = 0 ; i < cores; i++) {
+//        int cores =  Runtime.getRuntime().availableProcessors();
+//        for(int i = 0 ; i < cores; i++) {
             new Thread(task).start();
-        }
+//        }
     }
 
     public void goBack(){
